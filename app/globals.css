@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Thmanyah Sans";
+  src: url("/fonts/thmanyahsans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Thmanyah Sans";
+  src: url("/fonts/thmanyahsans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Thmanyah Sans";
+  src: url("/fonts/thmanyahsans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Thmanyah Serif Display";
+  src: url("/fonts/thmanyahserifdisplay-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Thmanyah Serif Display";
+  src: url("/fonts/thmanyahserifdisplay-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  background: #fbfaf7;
+  --accent: #f4b8c6;
+  --accent-soft: #fae5ea;
+  --accent-deep: #9a5265;
+  --font-display: "Thmanyah Serif Display", "Thmanyah Sans", "Tajawal", "IBM Plex Sans Arabic", sans-serif;
+  --font-sans: "Thmanyah Sans", "Tajawal", "IBM Plex Sans Arabic", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% 9%, rgba(244, 184, 198, 0.18), transparent 28rem),
+    radial-gradient(circle at 92% 2%, rgba(157, 184, 159, 0.14), transparent 24rem),
+    #fbfaf7;
+  color: #171412;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  text-align: right;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: #171412;
+}
+
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.17;
+  background-image:
+    linear-gradient(rgba(23, 20, 18, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 20, 18, 0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(to bottom, black, transparent 92%);
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.arch-shape {
+  border-radius: 48% 48% 8px 8px;
+  clip-path: path("M 0 212 C 0 94.9 94.9 0 212 0 C 329.1 0 424 94.9 424 212 L 424 532 L 0 532 Z");
+}
+
+.product-mask {
+  filter: none;
+}
+
+.snap-x {
+  scroll-snap-type: none;
+}
+
+.snap-card {
+  scroll-snap-align: start;
+}
+
+@keyframes ambientDrift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(2%, -2%, 0) scale(1.04);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.ambient-drift {
+  animation: ambientDrift 12s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
