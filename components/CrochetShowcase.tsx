@@ -478,7 +478,7 @@ function DeliveryMapPanel({
           </p>
         </div>
         <span
-          className="grid h-9 w-9 shrink-0 -translate-y-2 place-items-center rounded-full border border-white/80 shadow-soft lg:h-12 lg:w-12"
+          className="grid h-9 w-9 shrink-0 -translate-y-6 place-items-center rounded-full border border-white/80 shadow-soft lg:h-12 lg:w-12 lg:-translate-y-5"
           style={{ background: activeCategory.accentSoft, color: activeCategory.accentDeep }}
         >
           <Truck className="h-4 w-4 lg:h-5 lg:w-5" />
@@ -489,7 +489,7 @@ function DeliveryMapPanel({
         <div className="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(circle at 45% 45%, ${activeCategory.glow}, transparent 62%)` }} />
         <div className="relative z-10 mx-auto h-full max-h-[160px] w-full max-w-[180px] lg:max-h-[250px] lg:max-w-[270px]" aria-label="خريطة السعودية">
           <div
-            className="pointer-events-none absolute inset-[3%]"
+            className="pointer-events-none absolute inset-[2%]"
             style={{
               background: activeCategory.accentSoft,
               WebkitMaskImage: "url('/maps/Ksa1.png')",
@@ -498,8 +498,8 @@ function DeliveryMapPanel({
               maskRepeat: "no-repeat",
               WebkitMaskPosition: "center",
               maskPosition: "center",
-              WebkitMaskSize: "98% 98%",
-              maskSize: "98% 98%"
+              WebkitMaskSize: "100% 100%",
+              maskSize: "100% 100%"
             }}
           />
           <Image
