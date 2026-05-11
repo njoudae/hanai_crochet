@@ -657,7 +657,7 @@ function ProductCard({ product, category }: { product: Product; category: Catego
       </div>
       <div className="flex items-end justify-between gap-4">
         <div className="min-w-0">
-          <h3 className="truncate font-display text-3xl font-bold text-ink">{product.name}</h3>
+          <h3 className="pb-1 font-display text-3xl font-bold leading-tight text-ink">{product.name}</h3>
           <p className="mt-2 line-clamp-2 text-sm leading-6 text-ink/52">{product.shortDescription}</p>
         </div>
         <a
@@ -712,7 +712,7 @@ function MakerSection({ activeCategory }: { activeCategory: CategoryMeta }) {
           />
         </div>
         <div>
-          <p className="mb-4 text-xs font-bold tracking-[0.22em]" style={{ color: activeCategory.accentDeep }}>
+          <p className="mb-4 text-base font-medium leading-8 tracking-normal" style={{ color: activeCategory.accentDeep }}>
             عن هنـاي
           </p>
           <h2 className="font-display text-5xl font-bold leading-tight text-ink sm:text-6xl">مشغولات صغيرة بروح دافئة.</h2>
