@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -46,9 +46,10 @@ type CategoryMeta = {
 };
 
 const phoneNumber = "966582968140";
-const tiktokUsername = "hanai_crochet";
+const tiktokUsername = "__i0060";
+
 const instagramUsername = "njoodnfc";
-const xUsername = "hanai_crochet";
+const xUsername = "njoudae9";
 const socialLinks = {
   instagram: `https://www.instagram.com/${instagramUsername}`,
   tiktok: `https://www.tiktok.com/@${tiktokUsername}`,
@@ -91,7 +92,7 @@ const categories: CategoryMeta[] = [
     accentSoft: "#fae5ea",
     accentDeep: "#9a5265",
     glow: "rgba(244, 184, 198, 0.44)",
-    reviews: ["وش هالشغل الزين❤️❤️❤️❤️", "الشغل ما شاء الله تبارك الله جميل ومرتب"]
+    reviews: ["وش هالشغل الزين ❤️❤️", "الشغل ما شاء الله جميل ومرتب"]
   },
   {
     key: "dolls",
@@ -136,7 +137,7 @@ const categories: CategoryMeta[] = [
     accentSoft: "#f0e4f7",
     accentDeep: "#6f4a86",
     glow: "rgba(198, 163, 221, 0.5)",
-    reviews: ["نفذوا فكرتي بالضبط", "رهيبة ماشاءالله تجنن ❤️❤️✨"]
+    reviews: ["نفذوا فكرتي بالضبط", "رهيبة ما شاء الله تجنن ❤️✨"]
   }
 ];
 
@@ -198,7 +199,7 @@ function useActiveProduct(productsByCategory: Record<CategoryKey, Product[]>) {
         return;
       }
       setActiveIndex((current) => (current + 1) % heroItems.length);
-    }, 2000);
+    }, 4000);
 
     return clearTimer;
   }, [activeIndex, clearTimer, heroItems.length]);
@@ -444,49 +445,49 @@ function DeliveryMapPanel({
   prev: () => void;
 }) {
   return (
-    <aside className="pointer-events-auto relative z-30 order-3 rounded-[8px] border border-white/75 bg-white/78 p-5 text-right shadow-soft backdrop-blur-xl lg:order-none">
-      <div className="mb-7 flex items-center justify-start gap-3 lg:justify-center">
+    <aside className="pointer-events-auto relative z-30 order-3 flex min-h-[360px] flex-col justify-between rounded-[8px] border border-white/75 bg-white/78 p-3 text-right shadow-soft backdrop-blur-xl lg:order-none lg:h-full lg:min-h-[520px] lg:p-5">
+      <div className="mb-3 flex items-center justify-start gap-2 lg:mb-7 lg:gap-3 lg:justify-center">
         <button
           type="button"
           onClick={prev}
           aria-label="السابق"
-          className="pointer-events-auto relative z-30 grid h-12 w-12 place-items-center rounded-full border border-ink/10 bg-white/70 text-ink transition hover:bg-ink hover:text-white"
+          className="pointer-events-auto relative z-30 grid h-9 w-9 place-items-center rounded-full border border-ink/10 bg-white/70 text-ink transition hover:bg-ink hover:text-white lg:h-12 lg:w-12"
         >
-          <ChevronRight className="h-5 w-5" />
+          <ChevronRight className="h-4 w-4 lg:h-5 lg:w-5" />
         </button>
         <button
           type="button"
           onClick={next}
           aria-label="التالي"
-          className="pointer-events-auto relative z-30 grid h-12 w-12 place-items-center rounded-full border border-ink/10 bg-white/70 text-ink transition hover:bg-ink hover:text-white"
+          className="pointer-events-auto relative z-30 grid h-9 w-9 place-items-center rounded-full border border-ink/10 bg-white/70 text-ink transition hover:bg-ink hover:text-white lg:h-12 lg:w-12"
         >
-          <ChevronLeft className="h-5 w-5" />
+          <ChevronLeft className="h-4 w-4 lg:h-5 lg:w-5" />
         </button>
       </div>
 
-      <div className="flex items-start justify-between gap-4">
+      <div className="flex items-start justify-between gap-2 lg:gap-4">
         <div>
-          <p className="text-xs font-bold tracking-[0.18em]" style={{ color: activeCategory.accentDeep }}>
+          <p className="text-[10px] font-bold leading-5 lg:text-xs" style={{ color: activeCategory.accentDeep }}>
             توصيل هنـاي
           </p>
-          <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-ink">
+          <h2 className="mt-1 font-display text-xl font-bold leading-tight text-ink lg:mt-3 lg:text-3xl">
             نصل لجميع مناطق السعودية
           </h2>
-          <p className="mt-3 max-w-xs text-sm font-medium leading-7 text-ink/58">
+          <p className="mt-2 max-w-xs text-[11px] font-medium leading-5 text-ink/58 lg:mt-3 lg:text-sm lg:leading-7">
             تغليف أنيق وتوصيل سريع، لتصل القطعة كهدية دافئة من أول لحظة.
           </p>
         </div>
         <span
-          className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-white/80 shadow-soft"
+          className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/80 shadow-soft lg:h-12 lg:w-12"
           style={{ background: activeCategory.accentSoft, color: activeCategory.accentDeep }}
         >
-          <Truck className="h-5 w-5" />
+          <Truck className="h-4 w-4 lg:h-5 lg:w-5" />
         </span>
       </div>
 
-      <div className="relative mt-7 aspect-[1.08] overflow-hidden rounded-[8px] border border-white/70 bg-white/50 shadow-soft">
+      <div className="relative mt-3 aspect-[1.08] overflow-hidden rounded-[8px] border border-white/70 bg-white/50 shadow-soft lg:mt-7">
         <div className="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(circle at 45% 45%, ${activeCategory.glow}, transparent 62%)` }} />
-        <div className="relative z-10 mx-auto h-full max-h-[250px] w-full max-w-[270px]" aria-label="خريطة السعودية">
+        <div className="relative z-10 mx-auto h-full max-h-[160px] w-full max-w-[180px] lg:max-h-[250px] lg:max-w-[270px]" aria-label="خريطة السعودية">
           <div
             className="pointer-events-none absolute inset-[3%]"
             style={{
@@ -512,22 +513,22 @@ function DeliveryMapPanel({
           {deliveryCities.map((city) => (
             <span
               key={city.name}
-              className="absolute z-20 flex -translate-x-1/2 -translate-y-full flex-col items-center gap-1 text-[11px] font-bold text-ink"
+              className="absolute z-20 flex -translate-x-1/2 -translate-y-full flex-col items-center gap-0.5 text-[8px] font-bold text-ink lg:gap-1 lg:text-[11px]"
               style={{ left: `${city.x}%`, top: `${city.y}%` }}
             >
               <span>{city.name}</span>
-              <span className="grid h-6 w-6 place-items-center rounded-full border border-white bg-white/85 shadow-soft">
-                <MapPin className="h-3.5 w-3.5" style={{ color: activeCategory.accent }} />
+              <span className="grid h-4 w-4 place-items-center rounded-full border border-white bg-white/85 shadow-soft lg:h-6 lg:w-6">
+                <MapPin className="h-2.5 w-2.5 lg:h-3.5 lg:w-3.5" style={{ color: activeCategory.accent }} />
               </span>
             </span>
           ))}
         </div>
       </div>
 
-      <div className="mt-4 flex flex-wrap justify-center gap-1.5">
+      <div className="mt-2 flex flex-wrap justify-center gap-1 lg:mt-4 lg:gap-1.5">
         {deliveryCities.map((city) => (
-          <span key={city.name} className="inline-flex items-center gap-1 rounded-full border border-ink/10 bg-white/62 px-2.5 py-1 text-[11px] font-bold text-ink/58">
-            <MapPin className="h-3 w-3" />
+          <span key={city.name} className="inline-flex items-center gap-0.5 rounded-full border border-ink/10 bg-white/62 px-1.5 py-0.5 text-[9px] font-bold text-ink/58 lg:gap-1 lg:px-2.5 lg:py-1 lg:text-[11px]">
+            <MapPin className="h-2.5 w-2.5 lg:h-3 lg:w-3" />
             {city.name}
           </span>
         ))}
@@ -560,45 +561,45 @@ function Hero({
 
       <div className="relative z-10 mx-auto mt-3 max-w-7xl">
         <div
-          className="relative overflow-hidden rounded-[8px] border border-white/70 px-5 py-10 shadow-float backdrop-blur-2xl sm:px-8 lg:min-h-[650px] lg:px-14 lg:py-12"
+          className="relative overflow-hidden rounded-[8px] border border-white/70 px-2 py-3 shadow-float backdrop-blur-2xl sm:px-4 lg:h-[650px] lg:px-14 lg:py-12"
           style={{
             background: `linear-gradient(90deg, #f4f2ed 0%, rgba(255,255,255,0.9) 42%, ${activeCategory.accentSoft} 100%)`
           }}
         >
           <div className="pointer-events-none absolute left-1/2 top-0 hidden h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full border border-ink/8 lg:block" />
-          <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.2fr_0.82fr]">
+          <div className="grid grid-cols-[0.86fr_1.05fr_0.86fr] items-stretch gap-2 lg:h-full lg:grid-cols-[0.9fr_1.2fr_0.82fr] lg:gap-10">
             <div
-              className="relative z-30 order-2 rounded-[8px] border border-white/75 bg-white/82 p-6 text-right shadow-soft backdrop-blur-xl lg:order-none"
+              className="relative z-30 order-1 flex min-h-[360px] flex-col justify-center rounded-[8px] border border-white/75 bg-white/82 p-3 text-right shadow-soft backdrop-blur-xl lg:order-none lg:h-full lg:min-h-[520px] lg:p-6"
             >
-              <p className="mb-5 text-xs font-bold tracking-[0.18em]" style={{ color: activeCategory.accentDeep }}>
+              <p className="mb-2 max-w-sm text-[11px] font-medium leading-5 tracking-normal lg:mb-5 lg:text-base lg:leading-8" style={{ color: activeCategory.accentDeep }}>
                 {activeCategory.eyebrow}
               </p>
-              <h1 className="text-balance font-display text-[clamp(3.5rem,6.2vw,5.7rem)] font-bold leading-[0.95] tracking-normal text-ink">
+              <h1 className="flex min-h-[5.5rem] items-center text-balance font-display text-[clamp(1.45rem,7vw,2.25rem)] font-bold leading-[0.95] tracking-normal text-ink lg:min-h-[10rem] lg:text-[clamp(3rem,5.3vw,5rem)]">
                 {activeProduct.name}
               </h1>
-              <p className="mt-6 max-w-sm font-display text-2xl font-bold leading-9 text-ink">{activeCategory.heroLine}</p>
-              <p className="mt-5 max-w-sm text-base font-medium leading-8 text-ink/75">{activeProduct.shortDescription}</p>
-              <div className="mt-8 flex flex-wrap items-center gap-3">
+              <p className="mt-3 max-w-sm font-display text-sm font-bold leading-5 text-ink lg:mt-6 lg:text-2xl lg:leading-9">{activeCategory.heroLine}</p>
+              <p className="mt-2 max-w-sm text-[11px] font-medium leading-5 text-ink/75 lg:mt-5 lg:text-base lg:leading-8">{activeProduct.shortDescription}</p>
+              <div className="mt-4 flex flex-wrap items-center gap-2 lg:mt-8 lg:gap-3">
                 <a
                   href={getWhatsAppUrl(activeProduct)}
                   target="_blank"
                   rel="noreferrer"
-                  className="pointer-events-auto relative z-30 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-bold text-white shadow-soft transition hover:scale-[1.03]"
+                  className="pointer-events-auto relative z-30 inline-flex items-center gap-1 rounded-full bg-ink px-3 py-2 text-[10px] font-bold text-white shadow-soft transition hover:scale-[1.03] lg:gap-2 lg:px-6 lg:py-3 lg:text-sm"
                 >
-                  <MessageCircle className="h-4 w-4" />
+                  <MessageCircle className="h-3 w-3 lg:h-4 lg:w-4" />
                   اطلب عبر واتساب
                 </a>
                 <button
                   type="button"
                   onClick={() => scrollToSection(activeCategory.key)}
-                  className="pointer-events-auto relative z-30 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-5 py-3 text-sm font-bold text-ink/70 transition hover:bg-ink hover:text-white"
+                  className="pointer-events-auto relative z-30 inline-flex items-center gap-1 rounded-full border border-ink/10 bg-white/70 px-3 py-2 text-[10px] font-bold text-ink/70 transition hover:bg-ink hover:text-white lg:gap-2 lg:px-5 lg:py-3 lg:text-sm"
                 >
                   استعرض المجموعة
                 </button>
                 <button
                   type="button"
                   aria-label="إضافة للمفضلة"
-                  className="pointer-events-auto relative z-30 grid h-12 w-12 place-items-center rounded-full border border-ink/10 bg-white/70 text-ink transition hover:border-transparent hover:text-white"
+                  className="pointer-events-auto relative z-30 grid h-9 w-9 place-items-center rounded-full border border-ink/10 bg-white/70 text-ink transition hover:border-transparent hover:text-white lg:h-12 lg:w-12"
                   onMouseEnter={(event) => {
                     event.currentTarget.style.background = activeCategory.accent;
                   }}
@@ -606,12 +607,12 @@ function Hero({
                     event.currentTarget.style.background = "rgba(255,255,255,0.7)";
                   }}
                 >
-                  <Heart className="h-5 w-5" />
+                  <Heart className="h-4 w-4 lg:h-5 lg:w-5" />
                 </button>
               </div>
             </div>
 
-            <div className="relative z-10 order-1 min-h-[460px] lg:order-none lg:min-h-[580px]">
+            <div className="relative z-10 order-2 min-h-[360px] lg:order-none lg:h-full lg:min-h-[520px]">
               <div
                 className="pointer-events-none absolute left-1/2 top-1/2 h-[78%] w-[74%] -translate-x-1/2 -translate-y-1/2 rounded-t-full rounded-b-[10px] shadow-soft"
                 style={{ background: activeCategory.accentSoft }}
@@ -621,7 +622,7 @@ function Hero({
 
               <div
                 key={activeProduct.id}
-                className="pointer-events-none absolute inset-x-0 top-4 z-10 mx-auto h-[88%] max-w-[560px]"
+                className="pointer-events-none absolute inset-x-0 top-1/2 z-10 mx-auto h-[76%] max-w-[520px] -translate-y-1/2"
               >
                 <ProductImage product={activeProduct} priority imageOverride={activeProduct.heroImage} />
               </div>
@@ -633,57 +634,6 @@ function Hero({
               next={next}
               prev={prev}
             />
-            {/*
-            <aside className="hidden">
-              <div className="mb-8 flex items-center justify-start gap-3 lg:justify-center">
-                <button
-                  type="button"
-                  onClick={prev}
-                  aria-label="السابق"
-                  className="pointer-events-auto relative z-30 grid h-12 w-12 place-items-center rounded-full border border-ink/10 bg-white/70 text-ink transition hover:bg-ink hover:text-white"
-                >
-                  <ChevronRight className="h-5 w-5" />
-                </button>
-                <button
-                  type="button"
-                  onClick={next}
-                  aria-label="التالي"
-                  className="pointer-events-auto relative z-30 grid h-12 w-12 place-items-center rounded-full border border-ink/10 bg-white/70 text-ink transition hover:bg-ink hover:text-white"
-                >
-                  <ChevronLeft className="h-5 w-5" />
-                </button>
-              </div>
-
-              <div className="space-y-4">
-                {["الخامة", "الإحساس", "التفاصيل"].map((label, index) => (
-                  <div key={label} className="border-b border-ink/10 pb-4">
-                    <button className="flex w-full items-center justify-between py-2 text-right text-sm font-bold text-ink">
-                      {label}
-                      {index === 2 ? <ChevronDown className="h-4 w-4" /> : <span className="text-xl leading-none">+</span>}
-                    </button>
-                    {index === 2 ? <p className="max-w-xs text-sm font-medium leading-7 text-ink/70">{activeCategory.detail}</p> : null}
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-9 rounded-[8px] border border-white/70 bg-white/54 p-4 shadow-soft backdrop-blur-lg">
-                <p className="text-xs font-bold tracking-[0.18em] text-ink/60">المعروض الآن</p>
-                <p className="mt-3 font-display text-3xl font-bold leading-tight text-ink">{activeProduct.name}</p>
-                <div className="mt-4 flex gap-1.5">
-                  {categories.map((category, index) => (
-                    <span
-                      key={category.key}
-                      className="h-1.5 rounded-full transition-all"
-                      style={{
-                        width: index === categoryIndex ? "2.4rem" : "0.55rem",
-                        background: index === categoryIndex ? category.accent : "rgba(23, 20, 18, 0.16)"
-                      }}
-                    />
-                  ))}
-                </div>
-              </div>
-            </aside>
-            */}
           </div>
         </div>
       </div>
@@ -730,7 +680,7 @@ function ProductSection({ category, products }: { category: CategoryMeta; produc
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <p className="mb-4 text-xs font-bold tracking-[0.2em]" style={{ color: category.accentDeep }}>
+            <p className="mb-4 max-w-sm text-base font-medium leading-8 tracking-normal" style={{ color: category.accentDeep }}>
               {category.eyebrow}
             </p>
             <h2 className="font-display text-[clamp(3.1rem,8vw,7rem)] font-bold leading-[0.95] text-ink">{category.sectionTitle}</h2>
