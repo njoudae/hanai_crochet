@@ -478,7 +478,7 @@ function DeliveryMapPanel({
           </p>
         </div>
         <span
-          className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/80 shadow-soft lg:h-12 lg:w-12"
+          className="grid h-9 w-9 shrink-0 -translate-y-2 place-items-center rounded-full border border-white/80 shadow-soft lg:h-12 lg:w-12"
           style={{ background: activeCategory.accentSoft, color: activeCategory.accentDeep }}
         >
           <Truck className="h-4 w-4 lg:h-5 lg:w-5" />
@@ -549,7 +549,7 @@ function Hero({
   return (
     <section
       id="top"
-      className="relative min-h-screen overflow-hidden px-4 pb-10 pt-32 sm:px-6 lg:pt-32"
+      className="relative overflow-hidden px-4 pb-10 pt-32 sm:px-6 lg:pt-32"
     >
       <div
         className="ambient-drift pointer-events-none absolute left-1/2 top-0 h-[34rem] w-[62rem] -translate-x-1/2 rounded-full blur-3xl"
@@ -559,7 +559,7 @@ function Hero({
 
       <Header activeCategory={activeCategory} selectCategory={selectCategory} />
 
-      <div className="relative z-10 mx-auto mt-3 max-w-7xl">
+      <div className="relative z-10 mx-auto mt-8 max-w-7xl">
         <div
           className="relative overflow-hidden rounded-[8px] border border-white/70 px-2 py-3 shadow-float backdrop-blur-2xl sm:px-4 lg:h-[650px] lg:px-14 lg:py-12"
           style={{
@@ -674,9 +674,12 @@ function ProductCard({ product, category }: { product: Product; category: Catego
   );
 }
 
-function ProductSection({ category, products }: { category: CategoryMeta; products: Product[] }) {
+function ProductSection({ category, products, isFirst = false }: { category: CategoryMeta; products: Product[]; isFirst?: boolean }) {
   return (
-    <section id={category.key} className="scroll-mt-28 px-4 py-20 sm:px-6 lg:py-28">
+    <section
+      id={category.key}
+      className={`scroll-mt-28 px-4 pb-20 sm:px-6 lg:pb-28 ${isFirst ? "pt-3 lg:pt-3" : "pt-20 lg:pt-28"}`}
+    >
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
@@ -781,8 +784,8 @@ export default function CrochetShowcase({ productsByCategory }: { productsByCate
     <main style={cssVars} className="relative min-h-screen overflow-hidden bg-porcelain">
       <div className="grain pointer-events-none" />
       <Hero {...active} />
-      {categories.map((category) => (
-        <ProductSection key={category.key} category={category} products={productsByCategory[category.key]} />
+      {categories.map((category, index) => (
+        <ProductSection key={category.key} category={category} products={productsByCategory[category.key]} isFirst={index === 0} />
       ))}
       <MakerSection activeCategory={active.activeCategory} />
       <Footer activeCategory={active.activeCategory} />
