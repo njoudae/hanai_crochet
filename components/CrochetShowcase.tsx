@@ -46,10 +46,10 @@ type CategoryMeta = {
 };
 
 const phoneNumber = "966582968140";
-const tiktokUsername = "__i0060";
+const tiktokUsername = "hanai_crochet0";
 
 const instagramUsername = "njoodnfc";
-const xUsername = "njoudae9";
+const xUsername = "hanai_crochet";
 const socialLinks = {
   instagram: `https://www.instagram.com/${instagramUsername}`,
   tiktok: `https://www.tiktok.com/@${tiktokUsername}`,
