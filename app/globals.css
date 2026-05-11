@@ -135,6 +135,31 @@ body {
   animation: ambientDrift 12s ease-in-out infinite;
 }
 
+@media (max-width: 767px) and (orientation: portrait) {
+  .hero-showcase-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.22fr) !important;
+    gap: 0.5rem;
+  }
+
+  .hero-map-panel {
+    display: none !important;
+  }
+
+  .hero-copy-card,
+  .hero-product-stage {
+    min-height: 430px;
+  }
+
+  .hero-copy-card {
+    padding: 1rem;
+  }
+
+  .hero-product-image {
+    height: 88%;
+    max-width: 100%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

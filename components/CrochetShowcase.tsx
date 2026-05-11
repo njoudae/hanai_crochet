@@ -298,7 +298,7 @@ function Header({
   const navItems = [
     { label: "الرئيسية", id: "top" },
     ...categories.map((category) => ({ label: category.nav, id: category.key })),
-    { label: "عن هنـاي", id: "maker" }
+    { label: ".عن هنــاي", id: "maker" }
   ];
 
   return (
@@ -445,7 +445,7 @@ function DeliveryMapPanel({
   prev: () => void;
 }) {
   return (
-    <aside className="pointer-events-auto relative z-30 order-3 flex min-h-[360px] flex-col justify-between rounded-[8px] border border-white/75 bg-white/78 p-3 text-right shadow-soft backdrop-blur-xl lg:order-none lg:h-full lg:min-h-[520px] lg:p-5">
+    <aside className="hero-map-panel pointer-events-auto relative z-30 order-3 flex min-h-[360px] flex-col justify-between rounded-[8px] border border-white/75 bg-white/78 p-3 text-right shadow-soft backdrop-blur-xl lg:order-none lg:h-full lg:min-h-[520px] lg:p-5">
       <div className="mb-3 flex items-center justify-start gap-2 lg:mb-7 lg:gap-3 lg:justify-center">
         <button
           type="button"
@@ -567,9 +567,9 @@ function Hero({
           }}
         >
           <div className="pointer-events-none absolute left-1/2 top-0 hidden h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full border border-ink/8 lg:block" />
-          <div className="grid grid-cols-[0.86fr_1.05fr_0.86fr] items-stretch gap-2 lg:h-full lg:grid-cols-[0.9fr_1.2fr_0.82fr] lg:gap-10">
+          <div className="hero-showcase-grid grid grid-cols-[0.86fr_1.05fr_0.86fr] items-stretch gap-2 lg:h-full lg:grid-cols-[0.9fr_1.2fr_0.82fr] lg:gap-10">
             <div
-              className="relative z-30 order-1 flex min-h-[360px] flex-col justify-center rounded-[8px] border border-white/75 bg-white/82 p-3 text-right shadow-soft backdrop-blur-xl lg:order-none lg:h-full lg:min-h-[520px] lg:p-6"
+              className="hero-copy-card relative z-30 order-1 flex min-h-[360px] flex-col justify-center rounded-[8px] border border-white/75 bg-white/82 p-3 text-right shadow-soft backdrop-blur-xl lg:order-none lg:h-full lg:min-h-[520px] lg:p-6"
             >
               <p className="mb-2 max-w-sm text-[11px] font-medium leading-5 tracking-normal lg:mb-5 lg:text-base lg:leading-8" style={{ color: activeCategory.accentDeep }}>
                 {activeCategory.eyebrow}
@@ -612,7 +612,7 @@ function Hero({
               </div>
             </div>
 
-            <div className="relative z-10 order-2 min-h-[360px] lg:order-none lg:h-full lg:min-h-[520px]">
+            <div className="hero-product-stage relative z-10 order-2 min-h-[360px] lg:order-none lg:h-full lg:min-h-[520px]">
               <div
                 className="pointer-events-none absolute left-1/2 top-1/2 h-[78%] w-[74%] -translate-x-1/2 -translate-y-1/2 rounded-t-full rounded-b-[10px] shadow-soft"
                 style={{ background: activeCategory.accentSoft }}
@@ -622,7 +622,7 @@ function Hero({
 
               <div
                 key={activeProduct.id}
-                className="pointer-events-none absolute inset-x-0 top-1/2 z-10 mx-auto h-[76%] max-w-[520px] -translate-y-1/2"
+                className="hero-product-image pointer-events-none absolute inset-x-0 top-1/2 z-10 mx-auto h-[76%] max-w-[520px] -translate-y-1/2"
               >
                 <ProductImage product={activeProduct} priority imageOverride={activeProduct.heroImage} />
               </div>
