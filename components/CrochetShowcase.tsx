@@ -84,7 +84,7 @@ const categories: CategoryMeta[] = [
     label: "مفارش الورد",
     nav: "مفارش الورد",
     sectionTitle: "قسم مفارش الورد",
-    eyebrow: "قطع كروشيه تبهرك بجمالها",
+    eyebrow: "باقة كروشيه تبهرك بجمالها",
     heroLine: "الورد الذي لا يذبل، بألوان ناعمة وتفاصيل دقيقة.",
     sectionDescription: "باقات وورود كروشيه ناعمة، مصنوعة لتكون هدية راقية أو إضافة لطيفة في المكان.",
     detail: "خيوط ناعمة، تنسيق هادئ، وتغليف بسيط يليق بالهدية.",
@@ -298,7 +298,7 @@ function Header({
   const navItems = [
     { label: "الرئيسية", id: "top" },
     ...categories.map((category) => ({ label: category.nav, id: category.key })),
-    { label: ".عن هنــاي", id: "maker" }
+    { label: "عن هنــاي", id: "maker" }
   ];
 
   return (
@@ -319,7 +319,7 @@ function Header({
           </span>
         </a>
 
-        <nav className="order-3 flex w-full items-center justify-center gap-1 overflow-x-auto text-[10px] font-bold text-ink/58 hide-scrollbar sm:text-xs md:text-sm lg:order-2 lg:w-auto lg:gap-2">
+        <nav className="order-3 flex w-full -translate-y-0.5 items-center justify-center gap-1 overflow-x-auto text-[10px] font-bold text-ink/58 hide-scrollbar sm:-translate-y-1 sm:text-xs md:text-sm lg:order-2 lg:w-auto lg:gap-2">
           <a href="#top" className="shrink-0 rounded-full px-2 py-1.5 transition hover:bg-white/70 hover:text-ink sm:px-3 sm:py-2">
             {navItems[0].label}
           </a>
@@ -485,9 +485,9 @@ function DeliveryMapPanel({
         </span>
       </div>
 
-      <div className="relative mt-3 h-[172px] overflow-hidden rounded-[8px] border border-white/70 bg-white/50 shadow-soft md:h-[190px] lg:mt-7 lg:h-auto lg:aspect-[1.08]">
+      <div className="hero-map-frame relative mt-3 h-[172px] overflow-hidden rounded-[8px] border border-white/70 bg-white/50 shadow-soft md:h-[190px] lg:mt-7 lg:h-auto lg:aspect-[1.08]">
         <div className="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(circle at 45% 45%, ${activeCategory.glow}, transparent 62%)` }} />
-        <div className="relative z-10 mx-auto h-full w-[180px] md:w-[205px] lg:w-full lg:max-w-[270px]" aria-label="خريطة السعودية">
+        <div className="hero-map-inner relative z-10 mx-auto h-full w-[180px] md:w-[205px] lg:w-full lg:max-w-[270px]" aria-label="خريطة السعودية">
           <div
             className="pointer-events-none absolute inset-[2%]"
             style={{
@@ -561,7 +561,7 @@ function Hero({
 
       <div className="relative z-10 mx-auto mt-8 max-w-7xl">
         <div
-          className="relative overflow-hidden rounded-[8px] border border-white/70 px-2 py-3 shadow-float backdrop-blur-2xl sm:px-4 lg:h-[650px] lg:px-14 lg:py-12"
+          className="hero-shell relative overflow-hidden rounded-[8px] border border-white/70 px-2 py-3 shadow-float backdrop-blur-2xl sm:px-4 lg:h-[650px] lg:px-14 lg:py-12"
           style={{
             background: `linear-gradient(90deg, #f4f2ed 0%, rgba(255,255,255,0.9) 42%, ${activeCategory.accentSoft} 100%)`
           }}
@@ -595,19 +595,6 @@ function Hero({
                   className="pointer-events-auto relative z-30 inline-flex items-center gap-1 rounded-full border border-ink/10 bg-white/70 px-3 py-2 text-[10px] font-bold text-ink/70 transition hover:bg-ink hover:text-white lg:gap-2 lg:px-5 lg:py-3 lg:text-sm"
                 >
                   استعرض المجموعة
-                </button>
-                <button
-                  type="button"
-                  aria-label="إضافة للمفضلة"
-                  className="pointer-events-auto relative z-30 grid h-9 w-9 place-items-center rounded-full border border-ink/10 bg-white/70 text-ink transition hover:border-transparent hover:text-white lg:h-12 lg:w-12"
-                  onMouseEnter={(event) => {
-                    event.currentTarget.style.background = activeCategory.accent;
-                  }}
-                  onMouseLeave={(event) => {
-                    event.currentTarget.style.background = "rgba(255,255,255,0.7)";
-                  }}
-                >
-                  <Heart className="h-4 w-4 lg:h-5 lg:w-5" />
                 </button>
               </div>
             </div>

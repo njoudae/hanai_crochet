@@ -160,6 +160,52 @@ body {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1180px) and (orientation: landscape) {
+  .hero-shell {
+    height: auto !important;
+    padding: 1rem !important;
+  }
+
+  .hero-showcase-grid {
+    grid-template-columns: minmax(220px, 0.95fr) minmax(300px, 1.12fr) minmax(260px, 0.98fr) !important;
+    align-items: center;
+    gap: 1rem !important;
+    height: auto !important;
+  }
+
+  .hero-copy-card,
+  .hero-map-panel,
+  .hero-product-stage {
+    height: auto !important;
+    min-height: 520px !important;
+  }
+
+  .hero-copy-card,
+  .hero-map-panel {
+    padding: 1rem !important;
+  }
+
+  .hero-map-panel {
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .hero-map-frame {
+    aspect-ratio: auto !important;
+    height: 190px !important;
+    margin-top: 0.75rem !important;
+  }
+
+  .hero-map-inner {
+    max-width: 230px !important;
+    width: 230px !important;
+  }
+
+  .hero-product-image {
+    height: 78%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
