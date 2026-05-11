@@ -3,7 +3,12 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "هنـاي | مشغولات كروشيه يدوية",
-  description: "واجهة عربية فاخرة لعرض مشغولات هنـاي اليدوية من الورود والدمى والمفارش والطلبات الخاصة."
+  description: "واجهة عربية فاخرة لعرض مشغولات هنـاي اليدوية من الورود والدمى والمفارش والطلبات الخاصة.",
+  icons: {
+    icon: "/logo/hanai-favicon.png",
+    shortcut: "/logo/hanai-favicon.png",
+    apple: "/logo/hanai-favicon.png"
+  }
 };
 
 export default function RootLayout({

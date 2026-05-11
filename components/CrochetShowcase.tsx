@@ -302,10 +302,10 @@ function Header({
   ];
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-4 sm:px-6">
-      <div className="mx-auto flex max-w-7xl items-center justify-between rounded-[8px] border border-white/70 bg-white/72 px-4 py-7 shadow-soft backdrop-blur-2xl">
-        <a href="#top" className="flex min-w-0 items-center gap-3" aria-label="الرئيسية">
-          <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full bg-[color:var(--accent-soft)]">
+    <header className="fixed left-0 right-0 top-0 z-50 px-3 pt-3 sm:px-6 sm:pt-4">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-2 gap-y-2 rounded-[8px] border border-white/70 bg-white/72 px-3 py-3 shadow-soft backdrop-blur-2xl sm:px-4 sm:py-5 lg:flex-nowrap lg:py-7">
+        <a href="#top" className="order-1 flex min-w-0 items-center gap-2 sm:gap-3" aria-label="الرئيسية">
+          <span className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full bg-[color:var(--accent-soft)] sm:h-10 sm:w-10">
             <Image
               src="/logo/hanai_corosh.jpg"
               alt="هنـاي"
@@ -314,13 +314,13 @@ function Header({
             />
           </span>
           <span className="leading-none">
-            <span className="block whitespace-nowrap font-display text-2xl font-bold text-ink">هنـاي</span>
-            <span className="mt-2 hidden text-[11px] font-medium leading-none text-ink/45 sm:block">مشغولات كروشيه يدوية</span>
+            <span className="block whitespace-nowrap font-display text-xl font-bold text-ink sm:text-2xl">هنـاي</span>
+            <span className="mt-1 block whitespace-nowrap text-[9px] font-medium leading-none text-ink/45 sm:mt-2 sm:text-[11px]">مشغولات كروشيه يدوية</span>
           </span>
         </a>
 
-        <nav className="hidden items-center gap-2 text-sm font-bold text-ink/58 md:flex">
-          <a href="#top" className="rounded-full px-3 py-2 transition hover:bg-white/70 hover:text-ink">
+        <nav className="order-3 flex w-full items-center justify-center gap-1 overflow-x-auto text-[10px] font-bold text-ink/58 hide-scrollbar sm:text-xs md:text-sm lg:order-2 lg:w-auto lg:gap-2">
+          <a href="#top" className="shrink-0 rounded-full px-2 py-1.5 transition hover:bg-white/70 hover:text-ink sm:px-3 sm:py-2">
             {navItems[0].label}
           </a>
           {categories.map((category) => {
@@ -330,7 +330,7 @@ function Header({
                 key={category.key}
                 href={`#${category.key}`}
                 onClick={() => selectCategory(category.key, false)}
-                className="rounded-full px-3 py-2 transition hover:bg-white/70 hover:text-ink"
+                className="shrink-0 rounded-full px-2 py-1.5 transition hover:bg-white/70 hover:text-ink sm:px-3 sm:py-2"
                 style={{
                   color: active ? category.accentDeep : undefined,
                   background: active ? category.accentSoft : undefined
@@ -340,12 +340,12 @@ function Header({
               </a>
             );
           })}
-          <a href="#maker" className="rounded-full px-3 py-2 transition hover:bg-white/70 hover:text-ink">
+          <a href="#maker" className="shrink-0 rounded-full px-2 py-1.5 transition hover:bg-white/70 hover:text-ink sm:px-3 sm:py-2">
             {navItems[navItems.length - 1].label}
           </a>
         </nav>
 
-        <div className="flex items-center gap-1.5">
+        <div className="order-2 flex items-center gap-1 sm:gap-1.5 lg:order-3">
           {[
             { label: "Instagram", icon: Instagram, href: socialLinks.instagram },
             { label: "TikTok", icon: Music2, href: socialLinks.tiktok },
@@ -358,9 +358,9 @@ function Header({
               target="_blank"
               rel="noreferrer"
               aria-label={label}
-              className="grid h-9 w-9 place-items-center rounded-full text-ink/65 transition hover:bg-ink hover:text-white sm:h-10 sm:w-10"
+              className="grid h-7 w-7 place-items-center rounded-full text-ink/65 transition hover:bg-ink hover:text-white sm:h-9 sm:w-9 lg:h-10 lg:w-10"
             >
-              <Icon className="h-5 w-5" />
+              <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
             </a>
           ))}
         </div>
@@ -485,9 +485,9 @@ function DeliveryMapPanel({
         </span>
       </div>
 
-      <div className="relative mt-3 aspect-[1.08] overflow-hidden rounded-[8px] border border-white/70 bg-white/50 shadow-soft lg:mt-7">
+      <div className="relative mt-3 h-[172px] overflow-hidden rounded-[8px] border border-white/70 bg-white/50 shadow-soft md:h-[190px] lg:mt-7 lg:h-auto lg:aspect-[1.08]">
         <div className="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(circle at 45% 45%, ${activeCategory.glow}, transparent 62%)` }} />
-        <div className="relative z-10 mx-auto h-full max-h-[160px] w-full max-w-[180px] lg:max-h-[250px] lg:max-w-[270px]" aria-label="خريطة السعودية">
+        <div className="relative z-10 mx-auto h-full w-[180px] md:w-[205px] lg:w-full lg:max-w-[270px]" aria-label="خريطة السعودية">
           <div
             className="pointer-events-none absolute inset-[2%]"
             style={{
