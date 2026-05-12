@@ -45,14 +45,14 @@ type CategoryMeta = {
   reviews: string[];
 };
 
-const phoneNumber = "966544848761";
-const tiktokUsername = "hanai_crochet0";
+const phoneNumber = "966582968140";
+const tiktokUsername = "hanai.crochet0";
 
 const instagramUsername = "njoodnfc";
 const xUsername = "hanai_crochet";
 const socialLinks = {
   instagram: `https://www.instagram.com/${instagramUsername}`,
-  tiktok: `https://www.tiktok.com/@${tiktokUsername}?_r=1&_t=ZS-96Hj3NAgR40`,
+  tiktok: `https://www.tiktok.com/@${tiktokUsername}`,
   whatsapp: `https://wa.me/${phoneNumber}`,
   x: `https://x.com/${xUsername}`
 };
