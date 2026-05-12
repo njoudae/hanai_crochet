@@ -45,7 +45,7 @@ type CategoryMeta = {
   reviews: string[];
 };
 
-const phoneNumber = "966582968140";
+const phoneNumber = "9665448488761";
 const tiktokUsername = "hanai.crochet0";
 
 const instagramUsername = "njoodnfc";
