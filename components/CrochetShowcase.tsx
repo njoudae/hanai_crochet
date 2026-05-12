@@ -6,7 +6,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Heart,
-  Instagram,
   MapPin,
   Music2,
   MessageCircle,
@@ -45,13 +44,11 @@ type CategoryMeta = {
   reviews: string[];
 };
 
-const phoneNumber = "9665448488761";
+const phoneNumber = "966544848761";
 const tiktokUsername = "hanai.crochet0";
 
-const instagramUsername = "njoodnfc";
 const xUsername = "hanai_crochet";
 const socialLinks = {
-  instagram: `https://www.instagram.com/${instagramUsername}`,
   tiktok: `https://www.tiktok.com/@${tiktokUsername}`,
   whatsapp: `https://wa.me/${phoneNumber}`,
   x: `https://x.com/${xUsername}`
@@ -347,7 +344,6 @@ function Header({
 
         <div className="order-2 flex items-center gap-1 sm:gap-1.5 lg:order-3">
           {[
-            { label: "Instagram", icon: Instagram, href: socialLinks.instagram },
             { label: "TikTok", icon: Music2, href: socialLinks.tiktok },
             { label: "WhatsApp", icon: WhatsAppIcon, href: socialLinks.whatsapp },
             { label: "X", icon: X, href: socialLinks.x }
@@ -726,7 +722,6 @@ function Footer({ activeCategory }: { activeCategory: CategoryMeta }) {
         </div>
         <div className="flex items-center gap-2">
           {[
-            { icon: Instagram, href: socialLinks.instagram },
             { icon: Music2, href: socialLinks.tiktok },
             { icon: WhatsAppIcon, href: socialLinks.whatsapp },
             { icon: X, href: socialLinks.x }
